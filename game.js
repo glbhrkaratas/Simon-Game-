@@ -14,9 +14,14 @@ $(document).keypress(function(){
   }
 });
 
-$("#virtual-keyboard .virtual-key").on("click touchstart", function() {
-  nextSequence();
+$(document).on("click touchstart", function(event) {
+  if (!gameStart && !event.target.classList.contains("btn")) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    gameStart = true;
+  }
 });
+
 
 
 $(".btn").click(function(){
