@@ -14,6 +14,11 @@ $(document).keypress(function(){
   }
 });
 
+$("#virtual-keyboard .virtual-key").on("click touchstart", function() {
+  nextSequence();
+});
+
+
 $(".btn").click(function(){
   
   var userChosenColor = $(this).attr("id");
